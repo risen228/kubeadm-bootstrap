@@ -5,10 +5,32 @@ apt-get update
 apt-get -y upgrade
 apt-get install -y gnupg curl
 
-# disable swap for this session
-swapoff -a
+# remove systemd-resolved
+systemctl disable systemd-resolved
+systemctl stop systemd-resolved
+unlink /etc/resolv.conf
 
-# disable swap permanently
+# recreate resolv.conf
+echo nameserver 8.8.8.8 | tee /etc/resolv.conf
+
+# install dnsmasq
+apt-get install -y dnsmasq
+
+# configure dnsmasq
+touch /etc/dnsmasq.conf
+echo "port=53" >> /etc/dnsmasq.conf
+echo "domain-needed" >> /etc/dnsmasq.conf
+echo "bogus-priv" >> /etc/dnsmasq.conf
+echo "strict-order" >> /etc/dnsmasq.conf
+echo "expand-hosts" >> /etc/dnsmasq.conf
+echo "domain=$HOSTNAME" >> /etc/dnsmasq.conf
+echo "listen-address=127.0.0.1" >> /etc/dnsmasq.conf
+
+# restart dnsmasq
+systemctl restart dnsmasq
+
+# disable swap
+swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # apply basic ufw settings
