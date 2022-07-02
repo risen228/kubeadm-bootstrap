@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # update packages
-sudo apt update
-sudo apt -y upgrade
+apt-get update
+apt-get -y upgrade
+apt-get install -y gnupg curl
 
 # disable swap for this session
 swapoff -a
@@ -32,5 +33,11 @@ ufw allow 30000:32767/udp
 
 # enable ufw
 ufw --force enable
+
+# fix "/proc/sys/net/bridge/bridge-nf-call-iptables does not exist"
+modprobe br_netfilter
+
+# fix "/proc/sys/net/ipv4/ip_forward contents are not set to 1"
+echo 1 > /proc/sys/net/ipv4/ip_forward
 
 echo "Prepare script executed. Run \"reboot\" command to apply settings."

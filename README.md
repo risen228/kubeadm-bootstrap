@@ -15,14 +15,8 @@ You should execute commands under the `root` user
 source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/prepare.sh)
 ```
 
-### Install kubeadm
+### Bootstrap
 
 ```sh
-source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/install-kubeadm.sh)
-```
-
-### Initialize kubeadm
-
-```sh
-source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/init-kubeadm.sh)
+source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/bootstrap.sh)
 ```

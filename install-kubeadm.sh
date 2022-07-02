@@ -1,11 +1,8 @@
 #!/bin/bash
 
-FLANNEL_CIDR="10.224.0.0/16"
-CRI_SOCKET="/var/run/crio/crio.sock"
-
 # install dependencies
 sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl
+sudo apt-get install -y apt-transport-https ca-certificates
 
 # add gpg keys for repositories
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
