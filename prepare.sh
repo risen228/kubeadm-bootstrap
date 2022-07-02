@@ -1,6 +1,8 @@
 #!/bin/bash
 
+# disable swap
 swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # apply basic ufw settings
 ufw default deny incoming
