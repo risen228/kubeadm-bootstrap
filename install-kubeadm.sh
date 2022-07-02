@@ -14,5 +14,5 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 
 # install tools
 apt-get update
-apt-get install -y kubelet=$VERSION kubeadm=$VERSION kubectl=$VERSION
+apt-get install -y --allow-change-held-packages kubelet=$VERSION kubeadm=$VERSION kubectl=$VERSION
 apt-mark hold kubelet kubeadm kubectl
