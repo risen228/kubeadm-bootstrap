@@ -12,11 +12,11 @@ You should execute commands under the `root` user
 - Opens required ports
 
 ```sh
-source <(wget -qO- --no-cache https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/prepare.sh)
+source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/prepare.sh)
 ```
 
 ### Bootstrap
 
 ```sh
-source <(wget -qO- --no-cache https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/bootstrap.sh)
+source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/bootstrap.sh)
 ```
