@@ -2,9 +2,10 @@
 
 CRI_SOCKET="unix:///var/run/crio/crio.sock"
 FLANNEL_CIDR="10.224.0.0/16"
+IP="$(hostname -I)"
 
 # initialize kubeadm
-kubeadm init --pod-network-cidr=$FLANNEL_CIDR --cri-socket=$CRI_SOCKET
+kubeadm init --apiserver-advertise-address=$IP --pod-network-cidr=$FLANNEL_CIDR --cri-socket=$CRI_SOCKET
 
 # configure kubectl
 mkdir -p $HOME/.kube
