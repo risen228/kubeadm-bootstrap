@@ -20,12 +20,16 @@ curl -L https://github.com/kubernetes-sigs/cri-tools/releases/download/$VERSION/
 tar zxvf crictl-$VERSION-linux-amd64.tar.gz -C /usr/local/bin
 rm -f crictl-$VERSION-linux-amd64.tar.gz
 
+# bootstrap cri-o
+systemctl enable crio.service
+systemctl start crio.service
+
 # update cri-o settings
 echo "cgroup_manager = \"cgroupfs\"" >> /etc/crio/crio.conf
 echo "registries = [\"quay.io\", \"docker.io\", \"gcr.io\", \"eu.gcr.io\", \"k8s.gcr.io\"]" >> /etc/crio/crio.conf
 echo "conmon = \"\"" >> /etc/crio/crio.conf
 echo "conmon_cgroup = \"pod\"" >> /etc/crio/crio.conf
 
-# bootstrap cri-o
-systemctl enable crio.service
+# restart cri-o
+systemctl stop crio.service
 systemctl start crio.service
