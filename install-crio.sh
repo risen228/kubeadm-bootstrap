@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OS="xUbuntu_18.04"
-VERSION="1.24.1"
+VERSION="1.24"
 
 # add repositories
 echo "deb https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/$OS/ /" > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list
