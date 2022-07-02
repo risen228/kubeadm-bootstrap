@@ -1,7 +1,7 @@
 #!/bin/bash
 
 OS="xUbuntu_18.04"
-CRIO_VERSION="1.24.1"
+CRIO_VERSION="1.24"
 FLANNEL_CIDR="10.224.0.0/16"
 CRI_SOCKET="/var/run/crio/crio.sock"
 
