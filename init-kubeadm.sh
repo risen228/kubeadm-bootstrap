@@ -5,12 +5,12 @@ FLANNEL_CIDR="10.224.0.0/16"
 IP="$(hostname -I)"
 
 # initialize kubeadm
-kubeadm init --apiserver-advertise-address=$IP --pod-network-cidr=$FLANNEL_CIDR --cri-socket=$CRI_SOCKET
+kubeadm init --apiserver-advertise-address=$IP --apiserver-bind-port=443 --pod-network-cidr=$FLANNEL_CIDR --cri-socket=$CRI_SOCKET
 
 # configure kubectl
 mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
 
 # untaint node
 kubectl taint nodes --all node-role.kubernetes.io/master-

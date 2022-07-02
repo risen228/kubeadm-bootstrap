@@ -31,7 +31,7 @@ systemctl restart dnsmasq
 
 # disable swap
 swapoff -a
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # apply basic ufw settings
 ufw default deny incoming
@@ -39,6 +39,9 @@ ufw default allow outgoing
 
 # allow ssh
 ufw allow ssh
+
+# allow http(s)
+ufw allow 80,443/tcp
 
 # allow control-plane connections
 ufw allow 6443
