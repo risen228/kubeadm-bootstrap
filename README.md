@@ -10,5 +10,5 @@ Script toolbox for full kubernetes installation on Ubuntu 18.04
 - Opens required ports
 
 ```sh
-sudo bash <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/prepare.sh)
+sudo source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/prepare.sh)
 ```

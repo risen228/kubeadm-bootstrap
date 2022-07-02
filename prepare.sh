@@ -11,14 +11,16 @@ ufw allow ssh
 
 # allow control-plane connections
 ufw allow 6443
-ufw allow 2379:2380
+ufw allow 2379
+ufw allow 2380
 ufw allow 10250
 ufw allow 10259
 ufw allow 10257
 
 # allow worker connections
 ufw allow 10250
-ufw allow 30000:32767
+ufw allow 30000:32767/tcp
+ufw allow 30000:32767/udp
 
 # enable ufw
 ufw --force enable
