@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# disable swap
+# disable swap for this session
 swapoff -a
+
+# disable swap permanently
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # apply basic ufw settings
