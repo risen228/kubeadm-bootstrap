@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# update packages
+sudo apt update
+sudo apt upgrade
+
 # disable swap for this session
 swapoff -a
 
