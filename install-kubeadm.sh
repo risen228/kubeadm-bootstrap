@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.24"
+VERSION="1.24.1"
 
 # install dependencies
 apt-get update
