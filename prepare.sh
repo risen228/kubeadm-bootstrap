@@ -2,8 +2,10 @@
 
 apt-get update
 
-DEBIAN_FRONTEND=noninteractive
-apt-get -yq upgrade
+apt-mark hold grub-pc
+apt-get -y upgrade
+apt-mark unhold grub-pc
+
 apt-get install -y gnupg curl
 
 # remove systemd-resolved
