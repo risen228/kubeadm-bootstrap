@@ -4,7 +4,7 @@ apt-get update
 
 DEBIAN_FRONTEND=noninteractive
 apt-get -yq upgrade
-apt-get install -y gnupg curl software-properties-common
+apt-get install -y gnupg curl
 
 # remove systemd-resolved
 systemctl disable systemd-resolved
