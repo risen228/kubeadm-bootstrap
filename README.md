@@ -20,3 +20,9 @@ source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstr
 ```sh
 source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/bootstrap.sh)
 ```
+
+### Bootstrap 2
+
+```sh
+NODE_NAME=master-node source <(wget -qO- https://raw.githubusercontent.com/risenforces/kubeadm-bootstrap/main/bootstrap-2.sh)
+```
