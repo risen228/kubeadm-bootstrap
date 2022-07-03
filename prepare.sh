@@ -69,5 +69,3 @@ echo "br_netfilter" > /etc/modules-load.d/br_netfilter.conf
 # fix "/proc/sys/net/ipv4/ip_forward contents are not set to 1"
 echo 1 > /proc/sys/net/ipv4/ip_forward
 echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
-
-echo "Prepare script executed. Run \"reboot\" command to apply settings."
