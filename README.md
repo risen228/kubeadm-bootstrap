@@ -1,6 +1,13 @@
 # Kubernetes bootstrap
 
-Script toolbox for full kubernetes installation on Ubuntu 18.04
+Script toolbox for kubernetes installation on Ubuntu 18.04
+
+Includes:
+
+- kubernetes requirements setup (firewall, dns, ipv4 and bridge)
+- docker (containerd)
+- kubeadm
+- flannel
 
 ## Usage
 
