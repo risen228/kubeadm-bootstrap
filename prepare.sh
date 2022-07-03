@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# update packages
 apt-get update
-apt-get -y upgrade
-apt-get install -y gnupg curl
+
+DEBIAN_FRONTEND=noninteractive
+apt-get -yq upgrade
+apt-get install -y gnupg curl software-properties-common
 
 # remove systemd-resolved
 systemctl disable systemd-resolved
